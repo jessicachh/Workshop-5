@@ -1,33 +1,28 @@
 ﻿using System;
-using DemoProject;
 
-class Program
+namespace AbstractVehicleDemo
 {
-    static void Main(string[] args)
+    class Program
     {
-        // PRINTER DEMO
-        Console.WriteLine("=== Printer Demo ===");
-        Printer printer = new Printer();
-        printer.Print("Hello World");
-        printer.Print(123);
-        printer.Print("Repeated Message", 3);
+        static void Main(string[] args)
+        {
+            // Create Car object
+            Car car = new Car();
+            Console.WriteLine("Car:");
+            car.Display();          // Concrete method from abstract class
+            car.StartEngine();      // Overridden abstract method
+            car.StopEngine();       // Overridden abstract method
 
+            Console.WriteLine();
 
-        // TEACHER DEMO
-        Console.WriteLine("\n=== Teacher Demo ===");
+            // Create Bike object
+            Bike bike = new Bike();
+            Console.WriteLine("Bike:");
+            bike.Display();
+            bike.StartEngine();
+            bike.StopEngine();
 
-        NepaliTeacher nepTeacher = new NepaliTeacher();
-        nepTeacher.Name = "Ram";
-        Console.WriteLine("Nepali Teacher Name: " + nepTeacher.Name);
-        nepTeacher.Teaching();
-        nepTeacher.SalaryInfo();
-
-        Console.WriteLine();
-
-        EnglishTeacher engTeacher = new EnglishTeacher();
-        engTeacher.Name = "John";
-        Console.WriteLine("English Teacher Name: " + engTeacher.Name);
-        engTeacher.Teaching(); // uses base implementation
-        engTeacher.SalaryInfo();
+            Console.ReadLine();
+        }
     }
 }

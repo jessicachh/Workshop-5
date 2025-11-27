@@ -1,28 +1,21 @@
 ﻿using System;
+using ElectronicsDemo;
 
-namespace AbstractVehicleDemo
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            // Create Car object
-            Car car = new Car();
-            Console.WriteLine("Car:");
-            car.Display();          // Concrete method from abstract class
-            car.StartEngine();      // Overridden abstract method
-            car.StopEngine();       // Overridden abstract method
+        ElectronicsStore store = new ElectronicsStore();
 
-            Console.WriteLine();
+        // Creating devices
+        Laptop laptop = new Laptop("Dell", 85000);
+        Smartphone phone = new Smartphone("Samsung", 45000);
 
-            // Create Bike object
-            Bike bike = new Bike();
-            Console.WriteLine("Bike:");
-            bike.Display();
-            bike.StartEngine();
-            bike.StopEngine();
+        // Add to store
+        store.AddDevice(laptop);
+        store.AddDevice(phone);
 
-            Console.ReadLine();
-        }
+        // Show details
+        store.ShowAllDeviceDetails();
     }
 }

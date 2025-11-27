@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MethodOverloadingDemo
+namespace DemoProject
 {
     public class Printer
     {

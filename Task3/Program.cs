@@ -1,18 +1,33 @@
 ﻿using System;
+using DemoProject;
 
-namespace MethodOverloadingDemo
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Printer printer = new Printer();
+        // PRINTER DEMO
+        Console.WriteLine("=== Printer Demo ===");
+        Printer printer = new Printer();
+        printer.Print("Hello World");
+        printer.Print(123);
+        printer.Print("Repeated Message", 3);
 
-            printer.Print("Hello World");
-            printer.Print(1234);
-            printer.Print("Printing multiple times!", 3);
 
-            Console.ReadLine();
-        }
+        // TEACHER DEMO
+        Console.WriteLine("\n=== Teacher Demo ===");
+
+        NepaliTeacher nepTeacher = new NepaliTeacher();
+        nepTeacher.Name = "Ram";
+        Console.WriteLine("Nepali Teacher Name: " + nepTeacher.Name);
+        nepTeacher.Teaching();
+        nepTeacher.SalaryInfo();
+
+        Console.WriteLine();
+
+        EnglishTeacher engTeacher = new EnglishTeacher();
+        engTeacher.Name = "John";
+        Console.WriteLine("English Teacher Name: " + engTeacher.Name);
+        engTeacher.Teaching(); // uses base implementation
+        engTeacher.SalaryInfo();
     }
 }
