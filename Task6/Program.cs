@@ -7,7 +7,7 @@ class Program
     {
         ElectronicsStore store = new ElectronicsStore();
 
-        // Create devices
+        // Creating devices
         Laptop laptop = new Laptop("Dell", 85000);
         Smartphone phone = new Smartphone("Samsung", 45000);
 
